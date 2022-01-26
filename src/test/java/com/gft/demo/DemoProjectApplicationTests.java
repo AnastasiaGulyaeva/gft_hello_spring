@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DemoProjectApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void contextLoads() throws Exception{
+		throw new Exception ("Error en carga ded contexto");
 	}
 
 }

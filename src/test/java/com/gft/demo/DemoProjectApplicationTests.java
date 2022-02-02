@@ -3,9 +3,7 @@ package com.gft.demo;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @AutoConfigureWebTestClient
 class DemoProjectApplicationTests {
 
-	@Autowired transient TestRestTemplate restTemplate;
+    @Autowired transient TestRestTemplate restTemplate;
 
 	@Test
 	void contextLoads() {
@@ -32,7 +30,7 @@ class DemoProjectApplicationTests {
 	@Test
 	void rootTest() {
 		assertThat(restTemplate.getForObject("/", String.class))
-				.isEqualTo("Hola ke ase");
+				.isEqualTo("Hola mundo");
 	}
 
 	@Test

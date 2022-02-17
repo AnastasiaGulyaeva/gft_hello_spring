@@ -47,7 +47,7 @@ class DemoProjectApplicationTests {
 
 	@Test
 	void helloNames() {
-		String[] arr = {"Javier","Javier Arturo","Rodriguez"};
+		String[] arr = {"Anastasia","Gulyaeva"};
 		for(String name: arr) {
 			assertThat(restTemplate.getForObject("/hello?name="+name, String.class))
 					.isEqualTo("Hello "+name+"!");
@@ -56,9 +56,8 @@ class DemoProjectApplicationTests {
 
 	@ParameterizedTest
 	@ValueSource(strings = {
-			"Javier",
-			"Arturo",
-			"Rodriguez"
+			"Anastasia",
+			"Gulyaeva"
 	})
 	void helloParamNames(String name) {
 		assertThat(restTemplate.getForObject("/hello?name="+name, String.class))
